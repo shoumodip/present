@@ -1,0 +1,26 @@
+# Colors
+This is the syntax for colors in pres:
+- [*TYPE*/NUMBER/]{*TEXT*}
+
+The three syntax elements are discussed below
+
+# TYPE
+The type of color to apply:
+- *f* foreground color
+- *F* bright foreground color
+- *b* background color
+- *B* bright background color
+
+# NUMBER
+A number between /0-7/ which denotes the color according to *ANSI*:
+- *0* black
+- *1* red
+- *2* green
+- *3* yellow
+- *4* blue
+- *5* magenta
+- *6* cyan
+- *7* white
+
+# TEXT
+The text

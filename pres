@@ -1,0 +1,45 @@
+#!/bin/sh
+
+# Text styles
+bold_on="[1m"
+bold_off="[22m"
+italic_on="[3m"
+italic_off="[23m"
+underline_on="[4m"
+underline_off="[24m"
+strikethrough_on="[9m"
+strikethrough_off="[29m"
+default="[0m"
+
+# Format options
+heading="$bold_on[33m"
+prompt="[34m"
+bullet="$bold_on[34m"
+cmdline="[37m"
+
+for file in "$@"; do
+  cat "$file" | tr '\n' '\r' | sed "
+
+  s/^/\r/;
+
+  s/\r# \([^\r]*\)/\r$heading\1$default/g;
+  s/\r\$ \([^\r]*\)/\r$prompt$ $cmdline\1$default/g;
+  s/\r% [^\r]*//g;
+  s/\r- /\r$bullet • $default/g;
+
+  s/\([^\\]\)\*\([^*]*\)\([^\\]\)\*/\1$bold_on\2\3$bold_off/g;s/\\\\\*/*/g;
+  s|\([^\\]\)/\([^|]*\)\([^\\]\)/|\1$italic_on\2\3$italic_off|g;s|\\\\/|/|g;
+  s/\([^\\]\)_\([^_]*\)\([^\\]\)_/\1$underline_on\2\3$underline_off/g;s/\\\\_/_/g;
+  s/\([^\\]\)=\([^=]*\)\([^\\]\)=/\1$strikethrough_on\2\3$strikethrough_off/g;s/\\\\=/=/g;
+
+  s/\[f\([0-7]\)\]{\([^}]*\)}/[3\1m\2[39m/g;
+  s/\[b\([0-7]\)\]{\([^}]*\)}/[4\1m\2[49m/g;
+  s/\[F\([0-7]\)\]{\([^}]*\)}/[9\1m\2[39m/g;
+  s/\[B\([0-7]\)\]{\([^}]*\)}/[10\1m\2[49m/g;
+
+  s/^\r//;
+  s/\r/\n/g
+  "
+
+  echo ""
+done

@@ -1,0 +1,14 @@
+# Hello world in Rust:
+How to say hello to the world the rust way!
+
+# This is the code:
+[F1]{fn} [F2]{*main*}() {
+    [F6]{println!}([F2]{"Hello, world!"});
+}
+
+# Compile:
+$ rustc hello.rs
+
+# Output:
+$ .\/hello nice
+Hello, world!

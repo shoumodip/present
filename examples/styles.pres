@@ -1,0 +1,5 @@
+# Text Styles
+- *bold* text is surrounded by the '\*' character
+- /italic/ text is surrounded by the '\/' character
+- _underlined_ text is surrounded by the '\_' character
+- =strike through= text is surrounded by the '\=' character
