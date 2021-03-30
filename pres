@@ -28,7 +28,7 @@ for file in "$@"; do
   s/\r- /\r$bullet • $default/g;
 
   s/\([^\\]\)\*\([^*]*\)\([^\\]\)\*/\1$bold_on\2\3$bold_off/g;s/\\\\\*/*/g;
-  s|\([^\\]\)/\([^|]*\)\([^\\]\)/|\1$italic_on\2\3$italic_off|g;s|\\\\/|/|g;
+  s|\([^\\]\)/\([^/]*\)\([^\\]\)/|\1$italic_on\2\3$italic_off|g;s|\\\\/|/|g;
   s/\([^\\]\)_\([^_]*\)\([^\\]\)_/\1$underline_on\2\3$underline_off/g;s/\\\\_/_/g;
   s/\([^\\]\)=\([^=]*\)\([^\\]\)=/\1$strikethrough_on\2\3$strikethrough_off/g;s/\\\\=/=/g;
 
