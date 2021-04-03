@@ -31,7 +31,7 @@ This is the syntax for colors in `pres`.
 
 The three syntax elements are discussed below.
 
-# `<TYPE>`
+#### `<TYPE>`
 The type of color to apply.
 
 | Character | Description |
@@ -41,7 +41,7 @@ The type of color to apply.
 | `b` | background color |
 | `B` | bright background color |
 
-# `<NUMBER>`
+#### `<NUMBER>`
 A number between `0-7` which denotes the color according to [ANSI](https://en.wikipedia.org/wiki/ANSI_escape_code):
 
 | Number | Color |
@@ -55,7 +55,7 @@ A number between `0-7` which denotes the color according to [ANSI](https://en.wi
 | `6` | cyan |
 | `7` | white |
 
-# `<TEXT>`
+#### `<TEXT>`
 The text, duh.
 
 ## Requirements
